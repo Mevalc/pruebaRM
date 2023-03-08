@@ -23,8 +23,12 @@ const Form = () => {
    
   //el submit es para poder guardar y le  creo una funcion handleSubmit para que no
   //se borre la info cuando se la ingrese
-
-  const handleSubmit = (event) => {
+  //event.preventDefault() para evitar que la página se recargue cuando se envíe el formulario.
+//Luego, se comprueba si el objeto user tiene una propiedad nombre de longitud mayor a 8 caracteres y la propiedad medico no está vacía.
+// Si se cumple esta condición, la función llama a los métodos setShow(true) y setErr(false) para establecer el estado de los componentes.
+//Si la condición no se cumple, la función llama a los métodos setShow(false) y setErr(true) para establecer el estado de los componentes.
+ 
+const handleSubmit = (event) => {
     event.preventDefault()
         if(user.nombre.length >8 && user.medico !== ''){
             setShow(true)
